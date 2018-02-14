@@ -1,0 +1,24 @@
+{
+    "name": "stenmigerode/chili-soap-api",
+    "description": "CHILI SOAP API composer package to have namespaced access to all methods",
+    "keywords": ["CHILI publisher", "CHILI", "CHILI API"],
+    "homepage": "https://github.com/stenmigerode/chili-soap-api",
+    "type": "library",
+    "version": "4.13",
+    "require": {
+        "php": ">=5.6 <7.2"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Chili\\WebServices\\" : "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sten Migerode",
+            "email": "sten@migerode.com"
+        }
+    ],
+    "minimum-stability": "stable"
+}
