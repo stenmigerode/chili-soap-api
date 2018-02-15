@@ -4,7 +4,7 @@
     "keywords": ["CHILI publisher", "CHILI", "CHILI API"],
     "homepage": "https://github.com/stenmigerode/chili-soap-api",
     "type": "library",
-    "version": "4.13",
+    "version": "4.14",
     "require": {
         "php": ">=5.6 <7.2"
     },
