@@ -2,6 +2,7 @@
 
 namespace Chili\WebServices;
 
+
 /**
  * WebService functions for CHILI Publisher
  */
@@ -13,6 +14,8 @@ class Main extends \SoapClient
      * @access private
      */
     private static $classmap = array(
+      'ServerGetSettings' => 'Chili\WebServices\ServerGetSettings',
+      'ServerGetSettingsResponse' => 'Chili\WebServices\ServerGetSettingsResponse',
       'ServerGetSystemInfo' => 'Chili\WebServices\ServerGetSystemInfo',
       'ServerGetSystemInfoResponse' => 'Chili\WebServices\ServerGetSystemInfoResponse',
       'ServerLicenseRequest' => 'Chili\WebServices\ServerLicenseRequest',
@@ -89,6 +92,8 @@ class Main extends \SoapClient
       'XinetSetCurrentCredentialsResponse' => 'Chili\WebServices\XinetSetCurrentCredentialsResponse',
       'XinetTestConnection' => 'Chili\WebServices\XinetTestConnection',
       'XinetTestConnectionResponse' => 'Chili\WebServices\XinetTestConnectionResponse',
+      'DocumentCreateFromODT' => 'Chili\WebServices\DocumentCreateFromODT',
+      'DocumentCreateFromODTResponse' => 'Chili\WebServices\DocumentCreateFromODTResponse',
       'DocumentCreateFromPDF' => 'Chili\WebServices\DocumentCreateFromPDF',
       'DocumentCreateFromPDFResponse' => 'Chili\WebServices\DocumentCreateFromPDFResponse',
       'DocumentCreateHTML' => 'Chili\WebServices\DocumentCreateHTML',
@@ -343,8 +348,6 @@ class Main extends \SoapClient
       'ServerGetSavedSystemInfoListResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoListResponse',
       'ServerGetSavedSystemInfoXML' => 'Chili\WebServices\ServerGetSavedSystemInfoXML',
       'ServerGetSavedSystemInfoXMLResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoXMLResponse',
-      'ServerGetSettings' => 'Chili\WebServices\ServerGetSettings',
-      'ServerGetSettingsResponse' => 'Chili\WebServices\ServerGetSettingsResponse',
       'AdsGetFromURL' => 'Chili\WebServices\AdsGetFromURL',
       'AdsGetFromURLResponse' => 'Chili\WebServices\AdsGetFromURLResponse',
       'ApiKeyClearHeaderFieldsForServerDownloads' => 'Chili\WebServices\ApiKeyClearHeaderFieldsForServerDownloads',
@@ -388,9 +391,7 @@ class Main extends \SoapClient
       'DocumentCreateFromBlankDocTemplate' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplate',
       'DocumentCreateFromBlankDocTemplateResponse' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplateResponse',
       'DocumentCreateFromChiliPackage' => 'Chili\WebServices\DocumentCreateFromChiliPackage',
-      'DocumentCreateFromChiliPackageResponse' => 'Chili\WebServices\DocumentCreateFromChiliPackageResponse',
-      'DocumentCreateFromODT' => 'Chili\WebServices\DocumentCreateFromODT',
-      'DocumentCreateFromODTResponse' => 'Chili\WebServices\DocumentCreateFromODTResponse');
+      'DocumentCreateFromChiliPackageResponse' => 'Chili\WebServices\DocumentCreateFromChiliPackageResponse');
 
     /**
      * @param array $options A array of config values
@@ -406,6 +407,18 @@ class Main extends \SoapClient
       }
       
       parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * Returns the server settings<br/>
+     *
+     * @param ServerGetSettings $parameters
+     * @access public
+     * @return ServerGetSettingsResponse
+     */
+    public function ServerGetSettings(ServerGetSettings $parameters)
+    {
+      return $this->__soapCall('ServerGetSettings', array($parameters));
     }
 
     /**
@@ -862,6 +875,18 @@ class Main extends \SoapClient
     public function XinetTestConnection(XinetTestConnection $parameters)
     {
       return $this->__soapCall('XinetTestConnection', array($parameters));
+    }
+
+    /**
+     * Creates a new document based on a Open Document Text file.<br/>
+     *
+     * @param DocumentCreateFromODT $parameters
+     * @access public
+     * @return DocumentCreateFromODTResponse
+     */
+    public function DocumentCreateFromODT(DocumentCreateFromODT $parameters)
+    {
+      return $this->__soapCall('DocumentCreateFromODT', array($parameters));
     }
 
     /**
@@ -2385,18 +2410,6 @@ class Main extends \SoapClient
     }
 
     /**
-     * Returns the server settings<br/>
-     *
-     * @param ServerGetSettings $parameters
-     * @access public
-     * @return ServerGetSettingsResponse
-     */
-    public function ServerGetSettings(ServerGetSettings $parameters)
-    {
-      return $this->__soapCall('ServerGetSettings', array($parameters));
-    }
-
-    /**
      * Downloads an external XML file containing information on ads, and converts it for use in CHILI Editor<br/>
      *
      * @param AdsGetFromURL $parameters
@@ -2658,18 +2671,6 @@ class Main extends \SoapClient
     public function DocumentCreateFromChiliPackage(DocumentCreateFromChiliPackage $parameters)
     {
       return $this->__soapCall('DocumentCreateFromChiliPackage', array($parameters));
-    }
-
-    /**
-     * Creates a new document based on a Open Document Text file.<br/>
-     *
-     * @param DocumentCreateFromODT $parameters
-     * @access public
-     * @return DocumentCreateFromODTResponse
-     */
-    public function DocumentCreateFromODT(DocumentCreateFromODT $parameters)
-    {
-      return $this->__soapCall('DocumentCreateFromODT', array($parameters));
     }
 
 }
