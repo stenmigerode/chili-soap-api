@@ -2,7 +2,6 @@
 
 namespace Chili\WebServices;
 
-
 /**
  * WebService functions for CHILI Publisher
  */
@@ -14,6 +13,48 @@ class Main extends \SoapClient
      * @access private
      */
     private static $classmap = array(
+      'ResourceItemRemovePreviewOverride' => 'Chili\WebServices\ResourceItemRemovePreviewOverride',
+      'ResourceItemRemovePreviewOverrideResponse' => 'Chili\WebServices\ResourceItemRemovePreviewOverrideResponse',
+      'ResourceItemReplaceFile' => 'Chili\WebServices\ResourceItemReplaceFile',
+      'ResourceItemReplaceFileResponse' => 'Chili\WebServices\ResourceItemReplaceFileResponse',
+      'ResourceItemReplaceFileWithPreviewOverride' => 'Chili\WebServices\ResourceItemReplaceFileWithPreviewOverride',
+      'ResourceItemReplaceFileWithPreviewOverrideResponse' => 'Chili\WebServices\ResourceItemReplaceFileWithPreviewOverrideResponse',
+      'ResourceItemResetPreviews' => 'Chili\WebServices\ResourceItemResetPreviews',
+      'ResourceItemResetPreviewsResponse' => 'Chili\WebServices\ResourceItemResetPreviewsResponse',
+      'ResourceItemsAddFromZip' => 'Chili\WebServices\ResourceItemsAddFromZip',
+      'ResourceItemsAddFromZipResponse' => 'Chili\WebServices\ResourceItemsAddFromZipResponse',
+      'ResourceItemSave' => 'Chili\WebServices\ResourceItemSave',
+      'ResourceItemSaveResponse' => 'Chili\WebServices\ResourceItemSaveResponse',
+      'ResourceItemSaveCustomMetaData' => 'Chili\WebServices\ResourceItemSaveCustomMetaData',
+      'ResourceItemSaveCustomMetaDataResponse' => 'Chili\WebServices\ResourceItemSaveCustomMetaDataResponse',
+      'ResourceLibraryGetSettings' => 'Chili\WebServices\ResourceLibraryGetSettings',
+      'ResourceLibraryGetSettingsResponse' => 'Chili\WebServices\ResourceLibraryGetSettingsResponse',
+      'ResourceLibrarySaveSettings' => 'Chili\WebServices\ResourceLibrarySaveSettings',
+      'ResourceLibrarySaveSettingsResponse' => 'Chili\WebServices\ResourceLibrarySaveSettingsResponse',
+      'ResourceList' => 'Chili\WebServices\ResourceList',
+      'ResourceListResponse' => 'Chili\WebServices\ResourceListResponse',
+      'ResourceSearch' => 'Chili\WebServices\ResourceSearch',
+      'ResourceSearchResponse' => 'Chili\WebServices\ResourceSearchResponse',
+      'ResourceSearchByIDs' => 'Chili\WebServices\ResourceSearchByIDs',
+      'ResourceSearchByIDsResponse' => 'Chili\WebServices\ResourceSearchByIDsResponse',
+      'ResourceSearchInFolder' => 'Chili\WebServices\ResourceSearchInFolder',
+      'ResourceSearchInFolderResponse' => 'Chili\WebServices\ResourceSearchInFolderResponse',
+      'ResourceSearchPaged' => 'Chili\WebServices\ResourceSearchPaged',
+      'ResourceSearchPagedResponse' => 'Chili\WebServices\ResourceSearchPagedResponse',
+      'ResourceSearchPagedWithSorting' => 'Chili\WebServices\ResourceSearchPagedWithSorting',
+      'ResourceSearchPagedWithSortingResponse' => 'Chili\WebServices\ResourceSearchPagedWithSortingResponse',
+      'ServerDeleteAllSaveSystemFileInfos' => 'Chili\WebServices\ServerDeleteAllSaveSystemFileInfos',
+      'ServerDeleteAllSaveSystemFileInfosResponse' => 'Chili\WebServices\ServerDeleteAllSaveSystemFileInfosResponse',
+      'ServerDeleteSavedSystemInfoXML' => 'Chili\WebServices\ServerDeleteSavedSystemInfoXML',
+      'ServerDeleteSavedSystemInfoXMLResponse' => 'Chili\WebServices\ServerDeleteSavedSystemInfoXMLResponse',
+      'ServerGetLicenseInfo' => 'Chili\WebServices\ServerGetLicenseInfo',
+      'ServerGetLicenseInfoResponse' => 'Chili\WebServices\ServerGetLicenseInfoResponse',
+      'ServerGetLoggingSettings' => 'Chili\WebServices\ServerGetLoggingSettings',
+      'ServerGetLoggingSettingsResponse' => 'Chili\WebServices\ServerGetLoggingSettingsResponse',
+      'ServerGetSavedSystemInfoList' => 'Chili\WebServices\ServerGetSavedSystemInfoList',
+      'ServerGetSavedSystemInfoListResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoListResponse',
+      'ServerGetSavedSystemInfoXML' => 'Chili\WebServices\ServerGetSavedSystemInfoXML',
+      'ServerGetSavedSystemInfoXMLResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoXMLResponse',
       'ServerGetSettings' => 'Chili\WebServices\ServerGetSettings',
       'ServerGetSettingsResponse' => 'Chili\WebServices\ServerGetSettingsResponse',
       'ServerGetSystemInfo' => 'Chili\WebServices\ServerGetSystemInfo',
@@ -92,6 +133,42 @@ class Main extends \SoapClient
       'XinetSetCurrentCredentialsResponse' => 'Chili\WebServices\XinetSetCurrentCredentialsResponse',
       'XinetTestConnection' => 'Chili\WebServices\XinetTestConnection',
       'XinetTestConnectionResponse' => 'Chili\WebServices\XinetTestConnectionResponse',
+      'ApiKeySetRequestWithCredentialsForDomain' => 'Chili\WebServices\ApiKeySetRequestWithCredentialsForDomain',
+      'ApiKeySetRequestWithCredentialsForDomainResponse' => 'Chili\WebServices\ApiKeySetRequestWithCredentialsForDomainResponse',
+      'AssetGetImageInfo' => 'Chili\WebServices\AssetGetImageInfo',
+      'AssetGetImageInfoResponse' => 'Chili\WebServices\AssetGetImageInfoResponse',
+      'BarcodeCreate' => 'Chili\WebServices\BarcodeCreate',
+      'BarcodeCreateResponse' => 'Chili\WebServices\BarcodeCreateResponse',
+      'BarcodeCreateColored' => 'Chili\WebServices\BarcodeCreateColored',
+      'BarcodeCreateColoredResponse' => 'Chili\WebServices\BarcodeCreateColoredResponse',
+      'CsvFileCreate' => 'Chili\WebServices\CsvFileCreate',
+      'CsvFileCreateResponse' => 'Chili\WebServices\CsvFileCreateResponse',
+      'DataSourceAddSampleFile' => 'Chili\WebServices\DataSourceAddSampleFile',
+      'DataSourceAddSampleFileResponse' => 'Chili\WebServices\DataSourceAddSampleFileResponse',
+      'DataSourceDeleteSampleFile' => 'Chili\WebServices\DataSourceDeleteSampleFile',
+      'DataSourceDeleteSampleFileResponse' => 'Chili\WebServices\DataSourceDeleteSampleFileResponse',
+      'DataSourceDownloadSpreadsheets' => 'Chili\WebServices\DataSourceDownloadSpreadsheets',
+      'DataSourceDownloadSpreadsheetsResponse' => 'Chili\WebServices\DataSourceDownloadSpreadsheetsResponse',
+      'DataSourceDownloadURL' => 'Chili\WebServices\DataSourceDownloadURL',
+      'DataSourceDownloadURLResponse' => 'Chili\WebServices\DataSourceDownloadURLResponse',
+      'DataSourceFileGetXML' => 'Chili\WebServices\DataSourceFileGetXML',
+      'DataSourceFileGetXMLResponse' => 'Chili\WebServices\DataSourceFileGetXMLResponse',
+      'DataSourceListSampleFiles' => 'Chili\WebServices\DataSourceListSampleFiles',
+      'DataSourceListSampleFilesResponse' => 'Chili\WebServices\DataSourceListSampleFilesResponse',
+      'DataSourceSalesForceGetXML' => 'Chili\WebServices\DataSourceSalesForceGetXML',
+      'DataSourceSalesForceGetXMLResponse' => 'Chili\WebServices\DataSourceSalesForceGetXMLResponse',
+      'DataSourceSpreadsheetGetXML' => 'Chili\WebServices\DataSourceSpreadsheetGetXML',
+      'DataSourceSpreadsheetGetXMLResponse' => 'Chili\WebServices\DataSourceSpreadsheetGetXMLResponse',
+      'DocumentCopyAnnotations' => 'Chili\WebServices\DocumentCopyAnnotations',
+      'DocumentCopyAnnotationsResponse' => 'Chili\WebServices\DocumentCopyAnnotationsResponse',
+      'DocumentCopyDocumentEventActions' => 'Chili\WebServices\DocumentCopyDocumentEventActions',
+      'DocumentCopyDocumentEventActionsResponse' => 'Chili\WebServices\DocumentCopyDocumentEventActionsResponse',
+      'DocumentCopyVariableDefinitions' => 'Chili\WebServices\DocumentCopyVariableDefinitions',
+      'DocumentCopyVariableDefinitionsResponse' => 'Chili\WebServices\DocumentCopyVariableDefinitionsResponse',
+      'DocumentCreateFromBlankDocTemplate' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplate',
+      'DocumentCreateFromBlankDocTemplateResponse' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplateResponse',
+      'DocumentCreateFromChiliPackage' => 'Chili\WebServices\DocumentCreateFromChiliPackage',
+      'DocumentCreateFromChiliPackageResponse' => 'Chili\WebServices\DocumentCreateFromChiliPackageResponse',
       'DocumentCreateFromODT' => 'Chili\WebServices\DocumentCreateFromODT',
       'DocumentCreateFromODTResponse' => 'Chili\WebServices\DocumentCreateFromODTResponse',
       'DocumentCreateFromPDF' => 'Chili\WebServices\DocumentCreateFromPDF',
@@ -140,6 +217,10 @@ class Main extends \SoapClient
       'DocumentGetHTMLEditorURLResponse' => 'Chili\WebServices\DocumentGetHTMLEditorURLResponse',
       'DocumentGetHTMLFoldingViewerURL' => 'Chili\WebServices\DocumentGetHTMLFoldingViewerURL',
       'DocumentGetHTMLFoldingViewerURLResponse' => 'Chili\WebServices\DocumentGetHTMLFoldingViewerURLResponse',
+      'DocumentGetHTMLPreload' => 'Chili\WebServices\DocumentGetHTMLPreload',
+      'DocumentGetHTMLPreloadResponse' => 'Chili\WebServices\DocumentGetHTMLPreloadResponse',
+      'DocumentGetHTMLPreloadURL' => 'Chili\WebServices\DocumentGetHTMLPreloadURL',
+      'DocumentGetHTMLPreloadURLResponse' => 'Chili\WebServices\DocumentGetHTMLPreloadURLResponse',
       'DocumentGetHTMLThreeDModelViewerURL' => 'Chili\WebServices\DocumentGetHTMLThreeDModelViewerURL',
       'DocumentGetHTMLThreeDModelViewerURLResponse' => 'Chili\WebServices\DocumentGetHTMLThreeDModelViewerURLResponse',
       'DocumentGetInfo' => 'Chili\WebServices\DocumentGetInfo',
@@ -308,46 +389,6 @@ class Main extends \SoapClient
       'ResourceItemGetXMLResponse' => 'Chili\WebServices\ResourceItemGetXMLResponse',
       'ResourceItemMove' => 'Chili\WebServices\ResourceItemMove',
       'ResourceItemMoveResponse' => 'Chili\WebServices\ResourceItemMoveResponse',
-      'ResourceItemRemovePreviewOverride' => 'Chili\WebServices\ResourceItemRemovePreviewOverride',
-      'ResourceItemRemovePreviewOverrideResponse' => 'Chili\WebServices\ResourceItemRemovePreviewOverrideResponse',
-      'ResourceItemReplaceFile' => 'Chili\WebServices\ResourceItemReplaceFile',
-      'ResourceItemReplaceFileResponse' => 'Chili\WebServices\ResourceItemReplaceFileResponse',
-      'ResourceItemReplaceFileWithPreviewOverride' => 'Chili\WebServices\ResourceItemReplaceFileWithPreviewOverride',
-      'ResourceItemReplaceFileWithPreviewOverrideResponse' => 'Chili\WebServices\ResourceItemReplaceFileWithPreviewOverrideResponse',
-      'ResourceItemResetPreviews' => 'Chili\WebServices\ResourceItemResetPreviews',
-      'ResourceItemResetPreviewsResponse' => 'Chili\WebServices\ResourceItemResetPreviewsResponse',
-      'ResourceItemsAddFromZip' => 'Chili\WebServices\ResourceItemsAddFromZip',
-      'ResourceItemsAddFromZipResponse' => 'Chili\WebServices\ResourceItemsAddFromZipResponse',
-      'ResourceItemSave' => 'Chili\WebServices\ResourceItemSave',
-      'ResourceItemSaveResponse' => 'Chili\WebServices\ResourceItemSaveResponse',
-      'ResourceItemSaveCustomMetaData' => 'Chili\WebServices\ResourceItemSaveCustomMetaData',
-      'ResourceItemSaveCustomMetaDataResponse' => 'Chili\WebServices\ResourceItemSaveCustomMetaDataResponse',
-      'ResourceLibraryGetSettings' => 'Chili\WebServices\ResourceLibraryGetSettings',
-      'ResourceLibraryGetSettingsResponse' => 'Chili\WebServices\ResourceLibraryGetSettingsResponse',
-      'ResourceLibrarySaveSettings' => 'Chili\WebServices\ResourceLibrarySaveSettings',
-      'ResourceLibrarySaveSettingsResponse' => 'Chili\WebServices\ResourceLibrarySaveSettingsResponse',
-      'ResourceList' => 'Chili\WebServices\ResourceList',
-      'ResourceListResponse' => 'Chili\WebServices\ResourceListResponse',
-      'ResourceSearch' => 'Chili\WebServices\ResourceSearch',
-      'ResourceSearchResponse' => 'Chili\WebServices\ResourceSearchResponse',
-      'ResourceSearchByIDs' => 'Chili\WebServices\ResourceSearchByIDs',
-      'ResourceSearchByIDsResponse' => 'Chili\WebServices\ResourceSearchByIDsResponse',
-      'ResourceSearchInFolder' => 'Chili\WebServices\ResourceSearchInFolder',
-      'ResourceSearchInFolderResponse' => 'Chili\WebServices\ResourceSearchInFolderResponse',
-      'ResourceSearchPaged' => 'Chili\WebServices\ResourceSearchPaged',
-      'ResourceSearchPagedResponse' => 'Chili\WebServices\ResourceSearchPagedResponse',
-      'ServerDeleteAllSaveSystemFileInfos' => 'Chili\WebServices\ServerDeleteAllSaveSystemFileInfos',
-      'ServerDeleteAllSaveSystemFileInfosResponse' => 'Chili\WebServices\ServerDeleteAllSaveSystemFileInfosResponse',
-      'ServerDeleteSavedSystemInfoXML' => 'Chili\WebServices\ServerDeleteSavedSystemInfoXML',
-      'ServerDeleteSavedSystemInfoXMLResponse' => 'Chili\WebServices\ServerDeleteSavedSystemInfoXMLResponse',
-      'ServerGetLicenseInfo' => 'Chili\WebServices\ServerGetLicenseInfo',
-      'ServerGetLicenseInfoResponse' => 'Chili\WebServices\ServerGetLicenseInfoResponse',
-      'ServerGetLoggingSettings' => 'Chili\WebServices\ServerGetLoggingSettings',
-      'ServerGetLoggingSettingsResponse' => 'Chili\WebServices\ServerGetLoggingSettingsResponse',
-      'ServerGetSavedSystemInfoList' => 'Chili\WebServices\ServerGetSavedSystemInfoList',
-      'ServerGetSavedSystemInfoListResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoListResponse',
-      'ServerGetSavedSystemInfoXML' => 'Chili\WebServices\ServerGetSavedSystemInfoXML',
-      'ServerGetSavedSystemInfoXMLResponse' => 'Chili\WebServices\ServerGetSavedSystemInfoXMLResponse',
       'AdsGetFromURL' => 'Chili\WebServices\AdsGetFromURL',
       'AdsGetFromURLResponse' => 'Chili\WebServices\AdsGetFromURLResponse',
       'ApiKeyClearHeaderFieldsForServerDownloads' => 'Chili\WebServices\ApiKeyClearHeaderFieldsForServerDownloads',
@@ -358,47 +399,15 @@ class Main extends \SoapClient
       'ApiKeyKeepAliveResponse' => 'Chili\WebServices\ApiKeyKeepAliveResponse',
       'ApiKeySetHeaderFieldForServerDownloads' => 'Chili\WebServices\ApiKeySetHeaderFieldForServerDownloads',
       'ApiKeySetHeaderFieldForServerDownloadsResponse' => 'Chili\WebServices\ApiKeySetHeaderFieldForServerDownloadsResponse',
-      'AssetGetImageInfo' => 'Chili\WebServices\AssetGetImageInfo',
-      'AssetGetImageInfoResponse' => 'Chili\WebServices\AssetGetImageInfoResponse',
-      'BarcodeCreate' => 'Chili\WebServices\BarcodeCreate',
-      'BarcodeCreateResponse' => 'Chili\WebServices\BarcodeCreateResponse',
-      'BarcodeCreateColored' => 'Chili\WebServices\BarcodeCreateColored',
-      'BarcodeCreateColoredResponse' => 'Chili\WebServices\BarcodeCreateColoredResponse',
-      'CsvFileCreate' => 'Chili\WebServices\CsvFileCreate',
-      'CsvFileCreateResponse' => 'Chili\WebServices\CsvFileCreateResponse',
-      'DataSourceAddSampleFile' => 'Chili\WebServices\DataSourceAddSampleFile',
-      'DataSourceAddSampleFileResponse' => 'Chili\WebServices\DataSourceAddSampleFileResponse',
-      'DataSourceDeleteSampleFile' => 'Chili\WebServices\DataSourceDeleteSampleFile',
-      'DataSourceDeleteSampleFileResponse' => 'Chili\WebServices\DataSourceDeleteSampleFileResponse',
-      'DataSourceDownloadSpreadsheets' => 'Chili\WebServices\DataSourceDownloadSpreadsheets',
-      'DataSourceDownloadSpreadsheetsResponse' => 'Chili\WebServices\DataSourceDownloadSpreadsheetsResponse',
-      'DataSourceDownloadURL' => 'Chili\WebServices\DataSourceDownloadURL',
-      'DataSourceDownloadURLResponse' => 'Chili\WebServices\DataSourceDownloadURLResponse',
-      'DataSourceFileGetXML' => 'Chili\WebServices\DataSourceFileGetXML',
-      'DataSourceFileGetXMLResponse' => 'Chili\WebServices\DataSourceFileGetXMLResponse',
-      'DataSourceListSampleFiles' => 'Chili\WebServices\DataSourceListSampleFiles',
-      'DataSourceListSampleFilesResponse' => 'Chili\WebServices\DataSourceListSampleFilesResponse',
-      'DataSourceSalesForceGetXML' => 'Chili\WebServices\DataSourceSalesForceGetXML',
-      'DataSourceSalesForceGetXMLResponse' => 'Chili\WebServices\DataSourceSalesForceGetXMLResponse',
-      'DataSourceSpreadsheetGetXML' => 'Chili\WebServices\DataSourceSpreadsheetGetXML',
-      'DataSourceSpreadsheetGetXMLResponse' => 'Chili\WebServices\DataSourceSpreadsheetGetXMLResponse',
-      'DocumentCopyAnnotations' => 'Chili\WebServices\DocumentCopyAnnotations',
-      'DocumentCopyAnnotationsResponse' => 'Chili\WebServices\DocumentCopyAnnotationsResponse',
-      'DocumentCopyDocumentEventActions' => 'Chili\WebServices\DocumentCopyDocumentEventActions',
-      'DocumentCopyDocumentEventActionsResponse' => 'Chili\WebServices\DocumentCopyDocumentEventActionsResponse',
-      'DocumentCopyVariableDefinitions' => 'Chili\WebServices\DocumentCopyVariableDefinitions',
-      'DocumentCopyVariableDefinitionsResponse' => 'Chili\WebServices\DocumentCopyVariableDefinitionsResponse',
-      'DocumentCreateFromBlankDocTemplate' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplate',
-      'DocumentCreateFromBlankDocTemplateResponse' => 'Chili\WebServices\DocumentCreateFromBlankDocTemplateResponse',
-      'DocumentCreateFromChiliPackage' => 'Chili\WebServices\DocumentCreateFromChiliPackage',
-      'DocumentCreateFromChiliPackageResponse' => 'Chili\WebServices\DocumentCreateFromChiliPackageResponse');
+      'ApiKeySetRequestHeaderForDomain' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomain',
+      'ApiKeySetRequestHeaderForDomainResponse' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomainResponse');
 
     /**
      * @param array $options A array of config values
      * @param string $wsdl The wsdl file to use
      * @access public
      */
-    public function __construct(array $options = array(), $wsdl = 'http://chili-server.test/CHILI/main.asmx?WSDL')
+    public function __construct($wsdl, array $options = array())
     {
       foreach (self::$classmap as $key => $value) {
         if (!isset($options['classmap'][$key])) {
@@ -407,6 +416,256 @@ class Main extends \SoapClient
       }
       
       parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * Deletes the preview override files for a ResourceItem<br/>
+     *
+     * @param ResourceItemRemovePreviewOverride $parameters
+     * @access public
+     * @return ResourceItemRemovePreviewOverrideResponse
+     */
+    public function ResourceItemRemovePreviewOverride(ResourceItemRemovePreviewOverride $parameters)
+    {
+      return $this->__soapCall('ResourceItemRemovePreviewOverride', array($parameters));
+    }
+
+    /**
+     * Replaces the underlying file of a Resource Item of type directory_file, and returns its definition XML.<br/>
+     *
+     * @param ResourceItemReplaceFile $parameters
+     * @access public
+     * @return ResourceItemReplaceFileResponse
+     */
+    public function ResourceItemReplaceFile(ResourceItemReplaceFile $parameters)
+    {
+      return $this->__soapCall('ResourceItemReplaceFile', array($parameters));
+    }
+
+    /**
+     * Replaces the underlying file of a Resource Item of type directory_file, and returns its definition XML.<br/>To prevent previews from being generated automatically while you intend to supply an override file, this function allows you to pass both at the same time.<br/>
+     *
+     * @param ResourceItemReplaceFileWithPreviewOverride $parameters
+     * @access public
+     * @return ResourceItemReplaceFileWithPreviewOverrideResponse
+     */
+    public function ResourceItemReplaceFileWithPreviewOverride(ResourceItemReplaceFileWithPreviewOverride $parameters)
+    {
+      return $this->__soapCall('ResourceItemReplaceFileWithPreviewOverride', array($parameters));
+    }
+
+    /**
+     * Deletes all generated previews of the ResourceItem, and resets any &quot;error&quot; switches<br/>
+     *
+     * @param ResourceItemResetPreviews $parameters
+     * @access public
+     * @return ResourceItemResetPreviewsResponse
+     */
+    public function ResourceItemResetPreviews(ResourceItemResetPreviews $parameters)
+    {
+      return $this->__soapCall('ResourceItemResetPreviews', array($parameters));
+    }
+
+    /**
+     * Adds ResourceItems to the specified Resource, based on a ZIP file<br/>
+     *
+     * @param ResourceItemsAddFromZip $parameters
+     * @access public
+     * @return ResourceItemsAddFromZipResponse
+     */
+    public function ResourceItemsAddFromZip(ResourceItemsAddFromZip $parameters)
+    {
+      return $this->__soapCall('ResourceItemsAddFromZip', array($parameters));
+    }
+
+    /**
+     * Saves the definition XML or the underlying object XML of a Resource Item (depending on the Resource&#39;s type)<br/>
+     *
+     * @param ResourceItemSave $parameters
+     * @access public
+     * @return ResourceItemSaveResponse
+     */
+    public function ResourceItemSave(ResourceItemSave $parameters)
+    {
+      return $this->__soapCall('ResourceItemSave', array($parameters));
+    }
+
+    /**
+     * Saves metadata of specified resource item<br/>
+     *
+     * @param ResourceItemSaveCustomMetaData $parameters
+     * @access public
+     * @return ResourceItemSaveCustomMetaDataResponse
+     */
+    public function ResourceItemSaveCustomMetaData(ResourceItemSaveCustomMetaData $parameters)
+    {
+      return $this->__soapCall('ResourceItemSaveCustomMetaData', array($parameters));
+    }
+
+    /**
+     * Returns the settings of the specified Library (a top-level directory in the Resource&#39;s tree)<br/>
+     *
+     * @param ResourceLibraryGetSettings $parameters
+     * @access public
+     * @return ResourceLibraryGetSettingsResponse
+     */
+    public function ResourceLibraryGetSettings(ResourceLibraryGetSettings $parameters)
+    {
+      return $this->__soapCall('ResourceLibraryGetSettings', array($parameters));
+    }
+
+    /**
+     * Saves the settings of the specified Library (a top-level directory in the Resource&#39;s tree)<br/>
+     *
+     * @param ResourceLibrarySaveSettings $parameters
+     * @access public
+     * @return ResourceLibrarySaveSettingsResponse
+     */
+    public function ResourceLibrarySaveSettings(ResourceLibrarySaveSettings $parameters)
+    {
+      return $this->__soapCall('ResourceLibrarySaveSettings', array($parameters));
+    }
+
+    /**
+     * Returns a list of the available Resources.<br/>
+     *
+     * @param ResourceList $parameters
+     * @access public
+     * @return ResourceListResponse
+     */
+    public function ResourceList(ResourceList $parameters)
+    {
+      return $this->__soapCall('ResourceList', array($parameters));
+    }
+
+    /**
+     * Search for items in the resource<br/>
+     *
+     * @param ResourceSearch $parameters
+     * @access public
+     * @return ResourceSearchResponse
+     */
+    public function ResourceSearch(ResourceSearch $parameters)
+    {
+      return $this->__soapCall('ResourceSearch', array($parameters));
+    }
+
+    /**
+     * Search for items in the resource, based on a list of IDs<br/>
+     *
+     * @param ResourceSearchByIDs $parameters
+     * @access public
+     * @return ResourceSearchByIDsResponse
+     */
+    public function ResourceSearchByIDs(ResourceSearchByIDs $parameters)
+    {
+      return $this->__soapCall('ResourceSearchByIDs', array($parameters));
+    }
+
+    /**
+     * Search for items in the resource<br/>
+     *
+     * @param ResourceSearchInFolder $parameters
+     * @access public
+     * @return ResourceSearchInFolderResponse
+     */
+    public function ResourceSearchInFolder(ResourceSearchInFolder $parameters)
+    {
+      return $this->__soapCall('ResourceSearchInFolder', array($parameters));
+    }
+
+    /**
+     * Search for items in the resource, and returns a paged result list<br/>
+     *
+     * @param ResourceSearchPaged $parameters
+     * @access public
+     * @return ResourceSearchPagedResponse
+     */
+    public function ResourceSearchPaged(ResourceSearchPaged $parameters)
+    {
+      return $this->__soapCall('ResourceSearchPaged', array($parameters));
+    }
+
+    /**
+     * Search for items in the resource, and returns a sorted paged result list.<br/>When using paging, you can either specify a page number or a an item id.<br/><br/>
+     *
+     * @param ResourceSearchPagedWithSorting $parameters
+     * @access public
+     * @return ResourceSearchPagedWithSortingResponse
+     */
+    public function ResourceSearchPagedWithSorting(ResourceSearchPagedWithSorting $parameters)
+    {
+      return $this->__soapCall('ResourceSearchPagedWithSorting', array($parameters));
+    }
+
+    /**
+     * Removes all previously saved server info sets<br/>
+     *
+     * @param ServerDeleteAllSaveSystemFileInfos $parameters
+     * @access public
+     * @return ServerDeleteAllSaveSystemFileInfosResponse
+     */
+    public function ServerDeleteAllSaveSystemFileInfos(ServerDeleteAllSaveSystemFileInfos $parameters)
+    {
+      return $this->__soapCall('ServerDeleteAllSaveSystemFileInfos', array($parameters));
+    }
+
+    /**
+     * Deletes a previously saved server information set<br/>
+     *
+     * @param ServerDeleteSavedSystemInfoXML $parameters
+     * @access public
+     * @return ServerDeleteSavedSystemInfoXMLResponse
+     */
+    public function ServerDeleteSavedSystemInfoXML(ServerDeleteSavedSystemInfoXML $parameters)
+    {
+      return $this->__soapCall('ServerDeleteSavedSystemInfoXML', array($parameters));
+    }
+
+    /**
+     * @param ServerGetLicenseInfo $parameters
+     * @access public
+     * @return ServerGetLicenseInfoResponse
+     */
+    public function ServerGetLicenseInfo(ServerGetLicenseInfo $parameters)
+    {
+      return $this->__soapCall('ServerGetLicenseInfo', array($parameters));
+    }
+
+    /**
+     * Returns the server logging settings<br/>
+     *
+     * @param ServerGetLoggingSettings $parameters
+     * @access public
+     * @return ServerGetLoggingSettingsResponse
+     */
+    public function ServerGetLoggingSettings(ServerGetLoggingSettings $parameters)
+    {
+      return $this->__soapCall('ServerGetLoggingSettings', array($parameters));
+    }
+
+    /**
+     * Returns a list of previously saved system info XML files<br/>
+     *
+     * @param ServerGetSavedSystemInfoList $parameters
+     * @access public
+     * @return ServerGetSavedSystemInfoListResponse
+     */
+    public function ServerGetSavedSystemInfoList(ServerGetSavedSystemInfoList $parameters)
+    {
+      return $this->__soapCall('ServerGetSavedSystemInfoList', array($parameters));
+    }
+
+    /**
+     * Returns XML which was previously generated using ServerGetSystemInfo and saved using ServerSaveSystemInfoXML<br/>
+     *
+     * @param ServerGetSavedSystemInfoXML $parameters
+     * @access public
+     * @return ServerGetSavedSystemInfoXMLResponse
+     */
+    public function ServerGetSavedSystemInfoXML(ServerGetSavedSystemInfoXML $parameters)
+    {
+      return $this->__soapCall('ServerGetSavedSystemInfoXML', array($parameters));
     }
 
     /**
@@ -878,6 +1137,222 @@ class Main extends \SoapClient
     }
 
     /**
+     * Specify if client side requests to a domain needs to use the available credentials or not.<br/>You can use wildcards for the domain. Be sure to first add the wildcards, adn then the specific ones.<br/>
+     *
+     * @param ApiKeySetRequestWithCredentialsForDomain $parameters
+     * @access public
+     * @return ApiKeySetRequestWithCredentialsForDomainResponse
+     */
+    public function ApiKeySetRequestWithCredentialsForDomain(ApiKeySetRequestWithCredentialsForDomain $parameters)
+    {
+      return $this->__soapCall('ApiKeySetRequestWithCredentialsForDomain', array($parameters));
+    }
+
+    /**
+     * Returns information about the underlying image<br/>
+     *
+     * @param AssetGetImageInfo $parameters
+     * @access public
+     * @return AssetGetImageInfoResponse
+     */
+    public function AssetGetImageInfo(AssetGetImageInfo $parameters)
+    {
+      return $this->__soapCall('AssetGetImageInfo', array($parameters));
+    }
+
+    /**
+     * Creates a barcode, or returns information on it if it already existed in the cache<br/>
+     *
+     * @param BarcodeCreate $parameters
+     * @access public
+     * @return BarcodeCreateResponse
+     */
+    public function BarcodeCreate(BarcodeCreate $parameters)
+    {
+      return $this->__soapCall('BarcodeCreate', array($parameters));
+    }
+
+    /**
+     * Creates a barcode, or returns information on it if it already existed in the cache. <br/>
+     *
+     * @param BarcodeCreateColored $parameters
+     * @access public
+     * @return BarcodeCreateColoredResponse
+     */
+    public function BarcodeCreateColored(BarcodeCreateColored $parameters)
+    {
+      return $this->__soapCall('BarcodeCreateColored', array($parameters));
+    }
+
+    /**
+     * Converts an XML to CSV format, and returns a download link<br/>
+     *
+     * @param CsvFileCreate $parameters
+     * @access public
+     * @return CsvFileCreateResponse
+     */
+    public function CsvFileCreate(CsvFileCreate $parameters)
+    {
+      return $this->__soapCall('CsvFileCreate', array($parameters));
+    }
+
+    /**
+     * Adds a new sample file to a DataSource<br/>
+     *
+     * @param DataSourceAddSampleFile $parameters
+     * @access public
+     * @return DataSourceAddSampleFileResponse
+     */
+    public function DataSourceAddSampleFile(DataSourceAddSampleFile $parameters)
+    {
+      return $this->__soapCall('DataSourceAddSampleFile', array($parameters));
+    }
+
+    /**
+     * Deletes a sample files assigned to a DataSource<br/>
+     *
+     * @param DataSourceDeleteSampleFile $parameters
+     * @access public
+     * @return DataSourceDeleteSampleFileResponse
+     */
+    public function DataSourceDeleteSampleFile(DataSourceDeleteSampleFile $parameters)
+    {
+      return $this->__soapCall('DataSourceDeleteSampleFile', array($parameters));
+    }
+
+    /**
+     * Downloads a list of spreadsheets for a datasource (if its type = &#39;google&#39;)<br/>
+     *
+     * @param DataSourceDownloadSpreadsheets $parameters
+     * @access public
+     * @return DataSourceDownloadSpreadsheetsResponse
+     */
+    public function DataSourceDownloadSpreadsheets(DataSourceDownloadSpreadsheets $parameters)
+    {
+      return $this->__soapCall('DataSourceDownloadSpreadsheets', array($parameters));
+    }
+
+    /**
+     * Returns the result of one of the external URLs for a DataSource<br/>
+     *
+     * @param DataSourceDownloadURL $parameters
+     * @access public
+     * @return DataSourceDownloadURLResponse
+     */
+    public function DataSourceDownloadURL(DataSourceDownloadURL $parameters)
+    {
+      return $this->__soapCall('DataSourceDownloadURL', array($parameters));
+    }
+
+    /**
+     * Converts an uploaded file to generic XML using the settings of a DataSource<br/>
+     *
+     * @param DataSourceFileGetXML $parameters
+     * @access public
+     * @return DataSourceFileGetXMLResponse
+     */
+    public function DataSourceFileGetXML(DataSourceFileGetXML $parameters)
+    {
+      return $this->__soapCall('DataSourceFileGetXML', array($parameters));
+    }
+
+    /**
+     * Get a list of the sample files assigned to a DataSource<br/>
+     *
+     * @param DataSourceListSampleFiles $parameters
+     * @access public
+     * @return DataSourceListSampleFilesResponse
+     */
+    public function DataSourceListSampleFiles(DataSourceListSampleFiles $parameters)
+    {
+      return $this->__soapCall('DataSourceListSampleFiles', array($parameters));
+    }
+
+    /**
+     * Downloads an XML representation of the selected salesforce Query<br/>
+     *
+     * @param DataSourceSalesForceGetXML $parameters
+     * @access public
+     * @return DataSourceSalesForceGetXMLResponse
+     */
+    public function DataSourceSalesForceGetXML(DataSourceSalesForceGetXML $parameters)
+    {
+      return $this->__soapCall('DataSourceSalesForceGetXML', array($parameters));
+    }
+
+    /**
+     * Downloads an XML representation of the selected spreadsheet<br/>
+     *
+     * @param DataSourceSpreadsheetGetXML $parameters
+     * @access public
+     * @return DataSourceSpreadsheetGetXMLResponse
+     */
+    public function DataSourceSpreadsheetGetXML(DataSourceSpreadsheetGetXML $parameters)
+    {
+      return $this->__soapCall('DataSourceSpreadsheetGetXML', array($parameters));
+    }
+
+    /**
+     * Duplicates annotations from one document to another<br/>
+     *
+     * @param DocumentCopyAnnotations $parameters
+     * @access public
+     * @return DocumentCopyAnnotationsResponse
+     */
+    public function DocumentCopyAnnotations(DocumentCopyAnnotations $parameters)
+    {
+      return $this->__soapCall('DocumentCopyAnnotations', array($parameters));
+    }
+
+    /**
+     * Duplicates Document Event Actions from one document to another<br/>
+     *
+     * @param DocumentCopyDocumentEventActions $parameters
+     * @access public
+     * @return DocumentCopyDocumentEventActionsResponse
+     */
+    public function DocumentCopyDocumentEventActions(DocumentCopyDocumentEventActions $parameters)
+    {
+      return $this->__soapCall('DocumentCopyDocumentEventActions', array($parameters));
+    }
+
+    /**
+     * Duplicates variable definitions from one document to another<br/>
+     *
+     * @param DocumentCopyVariableDefinitions $parameters
+     * @access public
+     * @return DocumentCopyVariableDefinitionsResponse
+     */
+    public function DocumentCopyVariableDefinitions(DocumentCopyVariableDefinitions $parameters)
+    {
+      return $this->__soapCall('DocumentCopyVariableDefinitions', array($parameters));
+    }
+
+    /**
+     * Creates a new document based on the settings in the &quot;DocumentTemplates&quot; resource. This resource contains such settings as number of pages, dimensions, etc.<br/>
+     *
+     * @param DocumentCreateFromBlankDocTemplate $parameters
+     * @access public
+     * @return DocumentCreateFromBlankDocTemplateResponse
+     */
+    public function DocumentCreateFromBlankDocTemplate(DocumentCreateFromBlankDocTemplate $parameters)
+    {
+      return $this->__soapCall('DocumentCreateFromBlankDocTemplate', array($parameters));
+    }
+
+    /**
+     * Creates a new document based on a zip file containing a CHILI package (usually generated by the InDesign Extension).<br/>
+     *
+     * @param DocumentCreateFromChiliPackage $parameters
+     * @access public
+     * @return DocumentCreateFromChiliPackageResponse
+     */
+    public function DocumentCreateFromChiliPackage(DocumentCreateFromChiliPackage $parameters)
+    {
+      return $this->__soapCall('DocumentCreateFromChiliPackage', array($parameters));
+    }
+
+    /**
      * Creates a new document based on a Open Document Text file.<br/>
      *
      * @param DocumentCreateFromODT $parameters
@@ -1163,6 +1638,30 @@ class Main extends \SoapClient
     public function DocumentGetHTMLFoldingViewerURL(DocumentGetHTMLFoldingViewerURL $parameters)
     {
       return $this->__soapCall('DocumentGetHTMLFoldingViewerURL', array($parameters));
+    }
+
+    /**
+     * Returns an XML representation of the resources that need to be preloaded<br/>
+     *
+     * @param DocumentGetHTMLPreload $parameters
+     * @access public
+     * @return DocumentGetHTMLPreloadResponse
+     */
+    public function DocumentGetHTMLPreload(DocumentGetHTMLPreload $parameters)
+    {
+      return $this->__soapCall('DocumentGetHTMLPreload', array($parameters));
+    }
+
+    /**
+     * Returns a URL for preloading the specified document, with arguments to determine how the interface will be constructed<br/>
+     *
+     * @param DocumentGetHTMLPreloadURL $parameters
+     * @access public
+     * @return DocumentGetHTMLPreloadURLResponse
+     */
+    public function DocumentGetHTMLPreloadURL(DocumentGetHTMLPreloadURL $parameters)
+    {
+      return $this->__soapCall('DocumentGetHTMLPreloadURL', array($parameters));
     }
 
     /**
@@ -2172,244 +2671,6 @@ class Main extends \SoapClient
     }
 
     /**
-     * Deletes the preview override files for a ResourceItem<br/>
-     *
-     * @param ResourceItemRemovePreviewOverride $parameters
-     * @access public
-     * @return ResourceItemRemovePreviewOverrideResponse
-     */
-    public function ResourceItemRemovePreviewOverride(ResourceItemRemovePreviewOverride $parameters)
-    {
-      return $this->__soapCall('ResourceItemRemovePreviewOverride', array($parameters));
-    }
-
-    /**
-     * Replaces the underlying file of a Resource Item of type directory_file, and returns its definition XML.<br/>
-     *
-     * @param ResourceItemReplaceFile $parameters
-     * @access public
-     * @return ResourceItemReplaceFileResponse
-     */
-    public function ResourceItemReplaceFile(ResourceItemReplaceFile $parameters)
-    {
-      return $this->__soapCall('ResourceItemReplaceFile', array($parameters));
-    }
-
-    /**
-     * Replaces the underlying file of a Resource Item of type directory_file, and returns its definition XML.<br/>To prevent previews from being generated automatically while you intend to supply an override file, this function allows you to pass both at the same time.<br/>
-     *
-     * @param ResourceItemReplaceFileWithPreviewOverride $parameters
-     * @access public
-     * @return ResourceItemReplaceFileWithPreviewOverrideResponse
-     */
-    public function ResourceItemReplaceFileWithPreviewOverride(ResourceItemReplaceFileWithPreviewOverride $parameters)
-    {
-      return $this->__soapCall('ResourceItemReplaceFileWithPreviewOverride', array($parameters));
-    }
-
-    /**
-     * Deletes all generated previews of the ResourceItem, and resets any &quot;error&quot; switches<br/>
-     *
-     * @param ResourceItemResetPreviews $parameters
-     * @access public
-     * @return ResourceItemResetPreviewsResponse
-     */
-    public function ResourceItemResetPreviews(ResourceItemResetPreviews $parameters)
-    {
-      return $this->__soapCall('ResourceItemResetPreviews', array($parameters));
-    }
-
-    /**
-     * Adds ResourceItems to the specified Resource, based on a ZIP file<br/>
-     *
-     * @param ResourceItemsAddFromZip $parameters
-     * @access public
-     * @return ResourceItemsAddFromZipResponse
-     */
-    public function ResourceItemsAddFromZip(ResourceItemsAddFromZip $parameters)
-    {
-      return $this->__soapCall('ResourceItemsAddFromZip', array($parameters));
-    }
-
-    /**
-     * Saves the definition XML or the underlying object XML of a Resource Item (depending on the Resource&#39;s type)<br/>
-     *
-     * @param ResourceItemSave $parameters
-     * @access public
-     * @return ResourceItemSaveResponse
-     */
-    public function ResourceItemSave(ResourceItemSave $parameters)
-    {
-      return $this->__soapCall('ResourceItemSave', array($parameters));
-    }
-
-    /**
-     * Saves metadata of specified resource item<br/>
-     *
-     * @param ResourceItemSaveCustomMetaData $parameters
-     * @access public
-     * @return ResourceItemSaveCustomMetaDataResponse
-     */
-    public function ResourceItemSaveCustomMetaData(ResourceItemSaveCustomMetaData $parameters)
-    {
-      return $this->__soapCall('ResourceItemSaveCustomMetaData', array($parameters));
-    }
-
-    /**
-     * Returns the settings of the specified Library (a top-level directory in the Resource&#39;s tree)<br/>
-     *
-     * @param ResourceLibraryGetSettings $parameters
-     * @access public
-     * @return ResourceLibraryGetSettingsResponse
-     */
-    public function ResourceLibraryGetSettings(ResourceLibraryGetSettings $parameters)
-    {
-      return $this->__soapCall('ResourceLibraryGetSettings', array($parameters));
-    }
-
-    /**
-     * Saves the settings of the specified Library (a top-level directory in the Resource&#39;s tree)<br/>
-     *
-     * @param ResourceLibrarySaveSettings $parameters
-     * @access public
-     * @return ResourceLibrarySaveSettingsResponse
-     */
-    public function ResourceLibrarySaveSettings(ResourceLibrarySaveSettings $parameters)
-    {
-      return $this->__soapCall('ResourceLibrarySaveSettings', array($parameters));
-    }
-
-    /**
-     * Returns a list of the available Resources.<br/>
-     *
-     * @param ResourceList $parameters
-     * @access public
-     * @return ResourceListResponse
-     */
-    public function ResourceList(ResourceList $parameters)
-    {
-      return $this->__soapCall('ResourceList', array($parameters));
-    }
-
-    /**
-     * Search for items in the resource<br/>
-     *
-     * @param ResourceSearch $parameters
-     * @access public
-     * @return ResourceSearchResponse
-     */
-    public function ResourceSearch(ResourceSearch $parameters)
-    {
-      return $this->__soapCall('ResourceSearch', array($parameters));
-    }
-
-    /**
-     * Search for items in the resource, based on a list of IDs<br/>
-     *
-     * @param ResourceSearchByIDs $parameters
-     * @access public
-     * @return ResourceSearchByIDsResponse
-     */
-    public function ResourceSearchByIDs(ResourceSearchByIDs $parameters)
-    {
-      return $this->__soapCall('ResourceSearchByIDs', array($parameters));
-    }
-
-    /**
-     * Search for items in the resource<br/>
-     *
-     * @param ResourceSearchInFolder $parameters
-     * @access public
-     * @return ResourceSearchInFolderResponse
-     */
-    public function ResourceSearchInFolder(ResourceSearchInFolder $parameters)
-    {
-      return $this->__soapCall('ResourceSearchInFolder', array($parameters));
-    }
-
-    /**
-     * Search for items in the resource, and returns a paged result list<br/>
-     *
-     * @param ResourceSearchPaged $parameters
-     * @access public
-     * @return ResourceSearchPagedResponse
-     */
-    public function ResourceSearchPaged(ResourceSearchPaged $parameters)
-    {
-      return $this->__soapCall('ResourceSearchPaged', array($parameters));
-    }
-
-    /**
-     * Removes all previously saved server info sets<br/>
-     *
-     * @param ServerDeleteAllSaveSystemFileInfos $parameters
-     * @access public
-     * @return ServerDeleteAllSaveSystemFileInfosResponse
-     */
-    public function ServerDeleteAllSaveSystemFileInfos(ServerDeleteAllSaveSystemFileInfos $parameters)
-    {
-      return $this->__soapCall('ServerDeleteAllSaveSystemFileInfos', array($parameters));
-    }
-
-    /**
-     * Deletes a previously saved server information set<br/>
-     *
-     * @param ServerDeleteSavedSystemInfoXML $parameters
-     * @access public
-     * @return ServerDeleteSavedSystemInfoXMLResponse
-     */
-    public function ServerDeleteSavedSystemInfoXML(ServerDeleteSavedSystemInfoXML $parameters)
-    {
-      return $this->__soapCall('ServerDeleteSavedSystemInfoXML', array($parameters));
-    }
-
-    /**
-     * @param ServerGetLicenseInfo $parameters
-     * @access public
-     * @return ServerGetLicenseInfoResponse
-     */
-    public function ServerGetLicenseInfo(ServerGetLicenseInfo $parameters)
-    {
-      return $this->__soapCall('ServerGetLicenseInfo', array($parameters));
-    }
-
-    /**
-     * Returns the server logging settings<br/>
-     *
-     * @param ServerGetLoggingSettings $parameters
-     * @access public
-     * @return ServerGetLoggingSettingsResponse
-     */
-    public function ServerGetLoggingSettings(ServerGetLoggingSettings $parameters)
-    {
-      return $this->__soapCall('ServerGetLoggingSettings', array($parameters));
-    }
-
-    /**
-     * Returns a list of previously saved system info XML files<br/>
-     *
-     * @param ServerGetSavedSystemInfoList $parameters
-     * @access public
-     * @return ServerGetSavedSystemInfoListResponse
-     */
-    public function ServerGetSavedSystemInfoList(ServerGetSavedSystemInfoList $parameters)
-    {
-      return $this->__soapCall('ServerGetSavedSystemInfoList', array($parameters));
-    }
-
-    /**
-     * Returns XML which was previously generated using ServerGetSystemInfo and saved using ServerSaveSystemInfoXML<br/>
-     *
-     * @param ServerGetSavedSystemInfoXML $parameters
-     * @access public
-     * @return ServerGetSavedSystemInfoXMLResponse
-     */
-    public function ServerGetSavedSystemInfoXML(ServerGetSavedSystemInfoXML $parameters)
-    {
-      return $this->__soapCall('ServerGetSavedSystemInfoXML', array($parameters));
-    }
-
-    /**
      * Downloads an external XML file containing information on ads, and converts it for use in CHILI Editor<br/>
      *
      * @param AdsGetFromURL $parameters
@@ -2470,207 +2731,15 @@ class Main extends \SoapClient
     }
 
     /**
-     * Returns information about the underlying image<br/>
+     * Add HTTP header key/value pairs for a domain on the apiKey. When that API key is used to generate a PDF of a document that contains external assets, those key/value pairs are sent along in the header of the http request to download the high res assets.<br/>You can use wildcards for the domain. Be sure to first add the wildcards, adn then the specific ones.<br/>
      *
-     * @param AssetGetImageInfo $parameters
+     * @param ApiKeySetRequestHeaderForDomain $parameters
      * @access public
-     * @return AssetGetImageInfoResponse
+     * @return ApiKeySetRequestHeaderForDomainResponse
      */
-    public function AssetGetImageInfo(AssetGetImageInfo $parameters)
+    public function ApiKeySetRequestHeaderForDomain(ApiKeySetRequestHeaderForDomain $parameters)
     {
-      return $this->__soapCall('AssetGetImageInfo', array($parameters));
-    }
-
-    /**
-     * Creates a barcode, or returns information on it if it already existed in the cache<br/>
-     *
-     * @param BarcodeCreate $parameters
-     * @access public
-     * @return BarcodeCreateResponse
-     */
-    public function BarcodeCreate(BarcodeCreate $parameters)
-    {
-      return $this->__soapCall('BarcodeCreate', array($parameters));
-    }
-
-    /**
-     * Creates a barcode, or returns information on it if it already existed in the cache. <br/>
-     *
-     * @param BarcodeCreateColored $parameters
-     * @access public
-     * @return BarcodeCreateColoredResponse
-     */
-    public function BarcodeCreateColored(BarcodeCreateColored $parameters)
-    {
-      return $this->__soapCall('BarcodeCreateColored', array($parameters));
-    }
-
-    /**
-     * Converts an XML to CSV format, and returns a download link<br/>
-     *
-     * @param CsvFileCreate $parameters
-     * @access public
-     * @return CsvFileCreateResponse
-     */
-    public function CsvFileCreate(CsvFileCreate $parameters)
-    {
-      return $this->__soapCall('CsvFileCreate', array($parameters));
-    }
-
-    /**
-     * Adds a new sample file to a DataSource<br/>
-     *
-     * @param DataSourceAddSampleFile $parameters
-     * @access public
-     * @return DataSourceAddSampleFileResponse
-     */
-    public function DataSourceAddSampleFile(DataSourceAddSampleFile $parameters)
-    {
-      return $this->__soapCall('DataSourceAddSampleFile', array($parameters));
-    }
-
-    /**
-     * Deletes a sample files assigned to a DataSource<br/>
-     *
-     * @param DataSourceDeleteSampleFile $parameters
-     * @access public
-     * @return DataSourceDeleteSampleFileResponse
-     */
-    public function DataSourceDeleteSampleFile(DataSourceDeleteSampleFile $parameters)
-    {
-      return $this->__soapCall('DataSourceDeleteSampleFile', array($parameters));
-    }
-
-    /**
-     * Downloads a list of spreadsheets for a datasource (if its type = &#39;google&#39;)<br/>
-     *
-     * @param DataSourceDownloadSpreadsheets $parameters
-     * @access public
-     * @return DataSourceDownloadSpreadsheetsResponse
-     */
-    public function DataSourceDownloadSpreadsheets(DataSourceDownloadSpreadsheets $parameters)
-    {
-      return $this->__soapCall('DataSourceDownloadSpreadsheets', array($parameters));
-    }
-
-    /**
-     * Returns the result of one of the external URLs for a DataSource<br/>
-     *
-     * @param DataSourceDownloadURL $parameters
-     * @access public
-     * @return DataSourceDownloadURLResponse
-     */
-    public function DataSourceDownloadURL(DataSourceDownloadURL $parameters)
-    {
-      return $this->__soapCall('DataSourceDownloadURL', array($parameters));
-    }
-
-    /**
-     * Converts an uploaded file to generic XML using the settings of a DataSource<br/>
-     *
-     * @param DataSourceFileGetXML $parameters
-     * @access public
-     * @return DataSourceFileGetXMLResponse
-     */
-    public function DataSourceFileGetXML(DataSourceFileGetXML $parameters)
-    {
-      return $this->__soapCall('DataSourceFileGetXML', array($parameters));
-    }
-
-    /**
-     * Get a list of the sample files assigned to a DataSource<br/>
-     *
-     * @param DataSourceListSampleFiles $parameters
-     * @access public
-     * @return DataSourceListSampleFilesResponse
-     */
-    public function DataSourceListSampleFiles(DataSourceListSampleFiles $parameters)
-    {
-      return $this->__soapCall('DataSourceListSampleFiles', array($parameters));
-    }
-
-    /**
-     * Downloads an XML representation of the selected salesforce Query<br/>
-     *
-     * @param DataSourceSalesForceGetXML $parameters
-     * @access public
-     * @return DataSourceSalesForceGetXMLResponse
-     */
-    public function DataSourceSalesForceGetXML(DataSourceSalesForceGetXML $parameters)
-    {
-      return $this->__soapCall('DataSourceSalesForceGetXML', array($parameters));
-    }
-
-    /**
-     * Downloads an XML representation of the selected spreadsheet<br/>
-     *
-     * @param DataSourceSpreadsheetGetXML $parameters
-     * @access public
-     * @return DataSourceSpreadsheetGetXMLResponse
-     */
-    public function DataSourceSpreadsheetGetXML(DataSourceSpreadsheetGetXML $parameters)
-    {
-      return $this->__soapCall('DataSourceSpreadsheetGetXML', array($parameters));
-    }
-
-    /**
-     * Duplicates annotations from one document to another<br/>
-     *
-     * @param DocumentCopyAnnotations $parameters
-     * @access public
-     * @return DocumentCopyAnnotationsResponse
-     */
-    public function DocumentCopyAnnotations(DocumentCopyAnnotations $parameters)
-    {
-      return $this->__soapCall('DocumentCopyAnnotations', array($parameters));
-    }
-
-    /**
-     * Duplicates Document Event Actions from one document to another<br/>
-     *
-     * @param DocumentCopyDocumentEventActions $parameters
-     * @access public
-     * @return DocumentCopyDocumentEventActionsResponse
-     */
-    public function DocumentCopyDocumentEventActions(DocumentCopyDocumentEventActions $parameters)
-    {
-      return $this->__soapCall('DocumentCopyDocumentEventActions', array($parameters));
-    }
-
-    /**
-     * Duplicates variable definitions from one document to another<br/>
-     *
-     * @param DocumentCopyVariableDefinitions $parameters
-     * @access public
-     * @return DocumentCopyVariableDefinitionsResponse
-     */
-    public function DocumentCopyVariableDefinitions(DocumentCopyVariableDefinitions $parameters)
-    {
-      return $this->__soapCall('DocumentCopyVariableDefinitions', array($parameters));
-    }
-
-    /**
-     * Creates a new document based on the settings in the &quot;DocumentTemplates&quot; resource. This resource contains such settings as number of pages, dimensions, etc.<br/>
-     *
-     * @param DocumentCreateFromBlankDocTemplate $parameters
-     * @access public
-     * @return DocumentCreateFromBlankDocTemplateResponse
-     */
-    public function DocumentCreateFromBlankDocTemplate(DocumentCreateFromBlankDocTemplate $parameters)
-    {
-      return $this->__soapCall('DocumentCreateFromBlankDocTemplate', array($parameters));
-    }
-
-    /**
-     * Creates a new document based on a zip file containing a CHILI package (usually generated by the InDesign Extension).<br/>
-     *
-     * @param DocumentCreateFromChiliPackage $parameters
-     * @access public
-     * @return DocumentCreateFromChiliPackageResponse
-     */
-    public function DocumentCreateFromChiliPackage(DocumentCreateFromChiliPackage $parameters)
-    {
-      return $this->__soapCall('DocumentCreateFromChiliPackage', array($parameters));
+      return $this->__soapCall('ApiKeySetRequestHeaderForDomain', array($parameters));
     }
 
 }
