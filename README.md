@@ -9,5 +9,6 @@ composer require stenmigerode/chili-soap-api
 
 # Further info
 Use the CHILI publisher API documentation for more information on the CHILI publisher API.
+Remarks, requests and feedback can be posted as a github issue.
 
-You can register and post requests or remarks on my personal discussion forum: discuss.migerode.com
+Enjoy!
