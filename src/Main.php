@@ -13,6 +13,8 @@ class Main extends \SoapClient
      * @access private
      */
     private static $classmap = array(
+      'ResourceItemMove' => 'Chili\WebServices\ResourceItemMove',
+      'ResourceItemMoveResponse' => 'Chili\WebServices\ResourceItemMoveResponse',
       'ResourceItemRemovePreviewOverride' => 'Chili\WebServices\ResourceItemRemovePreviewOverride',
       'ResourceItemRemovePreviewOverrideResponse' => 'Chili\WebServices\ResourceItemRemovePreviewOverrideResponse',
       'ResourceItemReplaceFile' => 'Chili\WebServices\ResourceItemReplaceFile',
@@ -133,6 +135,8 @@ class Main extends \SoapClient
       'XinetSetCurrentCredentialsResponse' => 'Chili\WebServices\XinetSetCurrentCredentialsResponse',
       'XinetTestConnection' => 'Chili\WebServices\XinetTestConnection',
       'XinetTestConnectionResponse' => 'Chili\WebServices\XinetTestConnectionResponse',
+      'ApiKeySetRequestHeaderForDomain' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomain',
+      'ApiKeySetRequestHeaderForDomainResponse' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomainResponse',
       'ApiKeySetRequestWithCredentialsForDomain' => 'Chili\WebServices\ApiKeySetRequestWithCredentialsForDomain',
       'ApiKeySetRequestWithCredentialsForDomainResponse' => 'Chili\WebServices\ApiKeySetRequestWithCredentialsForDomainResponse',
       'AssetGetImageInfo' => 'Chili\WebServices\AssetGetImageInfo',
@@ -387,8 +391,6 @@ class Main extends \SoapClient
       'ResourceItemGetURLWithDebugInfoResponse' => 'Chili\WebServices\ResourceItemGetURLWithDebugInfoResponse',
       'ResourceItemGetXML' => 'Chili\WebServices\ResourceItemGetXML',
       'ResourceItemGetXMLResponse' => 'Chili\WebServices\ResourceItemGetXMLResponse',
-      'ResourceItemMove' => 'Chili\WebServices\ResourceItemMove',
-      'ResourceItemMoveResponse' => 'Chili\WebServices\ResourceItemMoveResponse',
       'AdsGetFromURL' => 'Chili\WebServices\AdsGetFromURL',
       'AdsGetFromURLResponse' => 'Chili\WebServices\AdsGetFromURLResponse',
       'ApiKeyClearHeaderFieldsForServerDownloads' => 'Chili\WebServices\ApiKeyClearHeaderFieldsForServerDownloads',
@@ -398,9 +400,7 @@ class Main extends \SoapClient
       'ApiKeyKeepAlive' => 'Chili\WebServices\ApiKeyKeepAlive',
       'ApiKeyKeepAliveResponse' => 'Chili\WebServices\ApiKeyKeepAliveResponse',
       'ApiKeySetHeaderFieldForServerDownloads' => 'Chili\WebServices\ApiKeySetHeaderFieldForServerDownloads',
-      'ApiKeySetHeaderFieldForServerDownloadsResponse' => 'Chili\WebServices\ApiKeySetHeaderFieldForServerDownloadsResponse',
-      'ApiKeySetRequestHeaderForDomain' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomain',
-      'ApiKeySetRequestHeaderForDomainResponse' => 'Chili\WebServices\ApiKeySetRequestHeaderForDomainResponse');
+      'ApiKeySetHeaderFieldForServerDownloadsResponse' => 'Chili\WebServices\ApiKeySetHeaderFieldForServerDownloadsResponse');
 
     /**
      * @param array $options A array of config values
@@ -416,6 +416,18 @@ class Main extends \SoapClient
       }
       
       parent::__construct($wsdl, $options);
+    }
+
+    /**
+     * Moves a Resource Item to a new location in the Resource&#39;s tree<br/>
+     *
+     * @param ResourceItemMove $parameters
+     * @access public
+     * @return ResourceItemMoveResponse
+     */
+    public function ResourceItemMove(ResourceItemMove $parameters)
+    {
+      return $this->__soapCall('ResourceItemMove', array($parameters));
     }
 
     /**
@@ -1134,6 +1146,18 @@ class Main extends \SoapClient
     public function XinetTestConnection(XinetTestConnection $parameters)
     {
       return $this->__soapCall('XinetTestConnection', array($parameters));
+    }
+
+    /**
+     * Add HTTP header key/value pairs for a domain on the apiKey. When that API key is used to generate a PDF of a document that contains external assets, those key/value pairs are sent along in the header of the http request to download the high res assets.<br/>You can use wildcards for the domain. Be sure to first add the wildcards, adn then the specific ones.<br/>
+     *
+     * @param ApiKeySetRequestHeaderForDomain $parameters
+     * @access public
+     * @return ApiKeySetRequestHeaderForDomainResponse
+     */
+    public function ApiKeySetRequestHeaderForDomain(ApiKeySetRequestHeaderForDomain $parameters)
+    {
+      return $this->__soapCall('ApiKeySetRequestHeaderForDomain', array($parameters));
     }
 
     /**
@@ -2659,18 +2683,6 @@ class Main extends \SoapClient
     }
 
     /**
-     * Moves a Resource Item to a new location in the Resource&#39;s tree<br/>
-     *
-     * @param ResourceItemMove $parameters
-     * @access public
-     * @return ResourceItemMoveResponse
-     */
-    public function ResourceItemMove(ResourceItemMove $parameters)
-    {
-      return $this->__soapCall('ResourceItemMove', array($parameters));
-    }
-
-    /**
      * Downloads an external XML file containing information on ads, and converts it for use in CHILI Editor<br/>
      *
      * @param AdsGetFromURL $parameters
@@ -2728,18 +2740,6 @@ class Main extends \SoapClient
     public function ApiKeySetHeaderFieldForServerDownloads(ApiKeySetHeaderFieldForServerDownloads $parameters)
     {
       return $this->__soapCall('ApiKeySetHeaderFieldForServerDownloads', array($parameters));
-    }
-
-    /**
-     * Add HTTP header key/value pairs for a domain on the apiKey. When that API key is used to generate a PDF of a document that contains external assets, those key/value pairs are sent along in the header of the http request to download the high res assets.<br/>You can use wildcards for the domain. Be sure to first add the wildcards, adn then the specific ones.<br/>
-     *
-     * @param ApiKeySetRequestHeaderForDomain $parameters
-     * @access public
-     * @return ApiKeySetRequestHeaderForDomainResponse
-     */
-    public function ApiKeySetRequestHeaderForDomain(ApiKeySetRequestHeaderForDomain $parameters)
-    {
-      return $this->__soapCall('ApiKeySetRequestHeaderForDomain', array($parameters));
     }
 
 }
